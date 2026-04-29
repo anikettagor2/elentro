@@ -12,6 +12,7 @@ import { FuturisticCTA } from "@/components/futuristic-cta";
 import { CustomCursor } from "@/components/home/custom-cursor";
 import { ImmersiveBackground } from "@/components/home/immersive-background";
 import { EVMAnimation } from "@/components/home/evm-animation";
+import { GCPHighlights } from "@/components/home/gcp-highlights";
 
 export default function Home() {
   return (
@@ -30,6 +31,8 @@ export default function Home() {
         <EVMAnimation />
 
         <BeforeAfter />
+        
+        <GCPHighlights />
 
         <ParallaxGallery />
 

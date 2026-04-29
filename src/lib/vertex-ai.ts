@@ -62,10 +62,12 @@ export async function generateAIResponseStream(
 
 /**
  * Simpler generation function for non-chat interactions (e.g. simulation results).
+ * Includes automatic retry mechanism for 503/high-demand scenarios.
  */
 export async function generateSimpleAIResponseStream(
   prompt: string,
-  systemInstruction?: string
+  systemInstruction?: string,
+  retryCount = 0
 ): Promise<ReadableStream> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error('GEMINI_API_KEY is not defined in environment variables.');
@@ -100,7 +102,15 @@ export async function generateSimpleAIResponseStream(
         }
       },
     });
-  } catch (error) {
+  } catch (error: any) {
+    // If we hit a 503 or overload, retry up to 2 times with backoff
+    if ((error.message?.includes('503') || error.message?.includes('429')) && retryCount < 2) {
+      const delay = Math.pow(2, retryCount) * 1000;
+      console.warn(`[GoogleAI] Retrying generation due to: ${error.message}. Attempt ${retryCount + 1}. Delay: ${delay}ms`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+      return generateSimpleAIResponseStream(prompt, systemInstruction, retryCount + 1);
+    }
+    
     console.error('[GoogleAI] Simple Generation error:', error);
     throw error;
   }
