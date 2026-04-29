@@ -46,7 +46,7 @@ export function WhyChooseUs() {
                        </div>
                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold font-heading leading-tight">
                           Why Strategic Leaders <br />
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Choose Electra</span>
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Choose Electron</span>
                        </h2>
                    </motion.div>
 

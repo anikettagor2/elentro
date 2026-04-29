@@ -83,7 +83,7 @@ export function EVMSimulator() {
 
   return (
     <div 
-      className="w-full max-w-5xl mx-auto grid md:grid-cols-[1.3fr_0.7fr] gap-10 items-start"
+      className="w-full max-w-7xl mx-auto grid md:grid-cols-[1.3fr_0.7fr] gap-10 items-start"
       role="region" 
       aria-label="EVM Voting Simulator"
     >

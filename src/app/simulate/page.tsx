@@ -21,7 +21,7 @@ export default function SimulatePage() {
       <main className="container mx-auto px-4 pt-32 pb-16 min-h-screen">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-amber-400">
-            Electra Sim Engine
+            Electron Sim Engine
           </h1>
           <p className="mt-4 text-zinc-400 max-w-2xl mx-auto">
             Configure your parameters and run cause-and-effect scenarios powered by Gemini 1.5 Pro to predict electoral outcomes.

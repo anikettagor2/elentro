@@ -12,7 +12,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="block group">
                 <div className="flex flex-col">
-                    <span className="text-2xl font-black text-white tracking-tighter font-heading">ELECTRA<span className="text-primary italic">.</span></span>
+                    <span className="text-2xl font-black text-white tracking-tighter font-heading">ELECTRON<span className="text-primary italic">.</span></span>
                     <span className="text-[9px] uppercase tracking-[0.4em] text-zinc-600 font-bold font-mono">Sim Engine</span>
                 </div>
             </Link>
@@ -65,7 +65,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between text-xs font-mono">
           <div className="flex flex-col gap-1">
-            <p>© 2026 ELECTRA SIM ENGINE. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 ELECTRON SIM ENGINE. ALL RIGHTS RESERVED.</p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-zinc-700 uppercase">System Status: Fully Operational</span>

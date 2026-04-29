@@ -64,7 +64,7 @@ export default function ContactPage() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 ml-1">Email Hash</label>
-                      <input required type="email" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500 transition-colors text-white font-sans" placeholder="hq@electra-sim.com" />
+                      <input required type="email" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500 transition-colors text-white font-sans" placeholder="hq@electron-sim.com" />
                     </div>
                   </div>
                   
@@ -107,7 +107,7 @@ export default function ContactPage() {
               <div className="space-y-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {[
-                    { icon: Mail, label: "Relay", val: "hi@electra-sim.com", sub: "Instant AI Response" },
+                    { icon: Mail, label: "Relay", val: "hi@electron-sim.com", sub: "Instant AI Response" },
                     { icon: Phone, label: "Priority Loop", val: "+91 63001 02441", sub: "24/7 War Room Support" },
                     { icon: MapPin, label: "HQ", val: "Bangalore, India", sub: "Intelligence Hub" },
                     { icon: Globe, label: "Global Presence", val: "Available Worldwide", sub: "Edge Computing" }
@@ -137,7 +137,7 @@ export default function ContactPage() {
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 blur-[60px] rounded-full" />
                   <div className="relative z-10">
-                    <h3 className="text-2xl font-bold text-white mb-4 font-heading tracking-tight">Electra Intelligence Network</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4 font-heading tracking-tight">Electron Intelligence Network</h3>
                     <p className="text-indigo-100 text-sm mb-8 font-sans max-w-xs">Join our ecosystem of 180+ successful campaigns. Follow us for strategic insights and modeling updates.</p>
                     <div className="flex gap-4">
                       {[Instagram, Twitter, Linkedin, MessageSquare].map((Icon, idx) => (

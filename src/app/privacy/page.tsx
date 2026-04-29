@@ -44,7 +44,7 @@ export default function PrivacyPage() {
 
             <div className="space-y-8 bg-zinc-900/40 rounded-[2.5rem] border border-white/5 backdrop-blur-md p-8 sm:p-12 mb-12">
               <p className="text-zinc-400 leading-relaxed text-lg">
-                At Electra, your privacy and the security of your strategic campaign data are paramount. This policy outlines our commitment to total confidentiality and data protection in our predictive ecosystem.
+                At Electron, your privacy and the security of your strategic campaign data are paramount. This policy outlines our commitment to total confidentiality and data protection in our predictive ecosystem.
               </p>
 
               <div className="grid grid-cols-1 gap-8 pt-6">
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
               <div className="pt-8 border-t border-white/5 mt-8">
                 <h3 className="text-xl font-bold text-white mb-4 font-heading">Contacting DPO</h3>
                 <p className="text-zinc-500 leading-relaxed text-sm">
-                  If you have any questions about this Privacy Policy, please reach out to our Data Protection Officer at <span className="text-indigo-400 font-bold font-mono">privacy@electra-sim.com</span>.
+                  If you have any questions about this Privacy Policy, please reach out to our Data Protection Officer at <span className="text-indigo-400 font-bold font-mono">privacy@electron-sim.com</span>.
                 </p>
               </div>
             </div>

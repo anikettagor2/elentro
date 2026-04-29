@@ -1,12 +1,12 @@
 
-# Electra Simulation Engine Implementation Plan & TODOs
+# Electron Simulation Engine Implementation Plan & TODOs
 
 ## 🚀 Current Progress
 - **Infrastructure**: Next.js 15, Tailwind v4, Firebase Configured.
-- **Brand Identity**: Fully rebranded from EditoHub to Electra. High-fidelity dark mode UI implemented.
+- **Brand Identity**: Fully rebranded from EditoHub to Electron. High-fidelity dark mode UI implemented.
 - **Core Engine**: Gemini 1.5 Pro integration for electoral simulation.
 - **Data Models**: Refactored schema.ts to support Simulations, Iterations, and strategic Data Nodes.
-- **Landing Page**: Futuristic Hero, Impact Gallery (Portfolio), and CTAs fully aligned with Electra.
+- **Landing Page**: Futuristic Hero, Impact Gallery (Portfolio), and CTAs fully aligned with Electron.
 
 ## 📝 TODO List for Production
 
@@ -36,4 +36,4 @@
 - [ ] Conduct load testing for high-concurrency simulation runs.
 
 ---
-© 2026 Electra Simulation Engine.
+© 2026 Electron Simulation Engine.

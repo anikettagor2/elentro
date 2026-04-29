@@ -15,7 +15,7 @@ export default function TermsPage() {
     {
       title: "Intellectual Property",
       icon: FileCheck,
-      content: "You retain 100% ownership of all input data and specific simulation outputs. Electra reserves the right to use aggregated, anonymized metadata to improve its predictive algorithms."
+      content: "You retain 100% ownership of all input data and specific simulation outputs. Electron reserves the right to use aggregated, anonymized metadata to improve its predictive algorithms."
     },
     {
       title: "Financial Protocols",
@@ -46,7 +46,7 @@ export default function TermsPage() {
               <div className="flex items-start gap-4 p-6 rounded-2xl bg-indigo-500/5 border border-indigo-500/20 mb-8">
                 <AlertCircle className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
                 <p className="text-indigo-400/90 text-sm leading-relaxed font-sans">
-                  Engagement with Electra systems constitutes acceptance of these operational protocols. Please review carefully.
+                  Engagement with Electron systems constitutes acceptance of these operational protocols. Please review carefully.
                 </p>
               </div>
 
@@ -66,7 +66,7 @@ export default function TermsPage() {
 
               <div className="pt-8 border-t border-white/5 mt-12 text-center">
                 <p className="text-zinc-600 text-xs font-mono">
-                  Operational inquiries? Reach out to <span className="text-indigo-400 font-bold">legal@electra-sim.com</span>.
+                  Operational inquiries? Reach out to <span className="text-indigo-400 font-bold">legal@electron-sim.com</span>.
                 </p>
               </div>
             </div>

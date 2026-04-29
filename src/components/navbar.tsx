@@ -49,7 +49,7 @@ export function Navbar() {
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
               <div className="flex flex-col">
-                  <span className="text-xl font-black text-white tracking-tighter font-heading leading-none">ELECTRA<span className="text-primary italic">.</span></span>
+                  <span className="text-xl font-black text-white tracking-tighter font-heading leading-none">ELECTRON<span className="text-primary italic">.</span></span>
                   <span className="text-[7px] uppercase tracking-[0.4em] text-primary/80 font-mono font-bold">Sim Engine</span>
               </div>
           </Link>
@@ -103,7 +103,7 @@ export function Navbar() {
             aria-label="Mobile navigation menu"
           >
             <div className="flex justify-between items-center mb-16">
-              <span className="text-2xl font-black text-white">ELECTRA<span className="text-primary">.</span></span>
+              <span className="text-2xl font-black text-white">ELECTRON<span className="text-primary">.</span></span>
               <button 
                 onClick={() => setIsOpen(false)} 
                 className="p-2 text-white"

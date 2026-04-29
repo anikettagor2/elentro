@@ -55,7 +55,7 @@ export function EVMAnimation() {
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-[2rem] p-8 shadow-2xl overflow-hidden"
+            className="relative w-full max-w-2xl bg-zinc-900 border border-white/10 rounded-[2rem] p-10 shadow-2xl overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
             
@@ -64,30 +64,30 @@ export function EVMAnimation() {
                 <div className={`w-3 h-3 rounded-full ${hasVoted ? 'bg-red-500 shadow-[0_0_10px_red]' : 'bg-zinc-700'}`} />
                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-tighter font-bold">Ready to Vote</span>
               </div>
-              <div className="text-[10px] font-mono text-primary font-black tracking-[0.2em]">ELECTRA // BU-2024</div>
+              <div className="text-[10px] font-mono text-primary font-black tracking-[0.2em]">ELECTRON // BU-2024</div>
             </div>
 
             <div className="space-y-4">
               {CANDIDATES.map((c) => (
-                <div key={c.id} className="flex items-center gap-4 bg-black/40 p-4 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all">
-                  <div className="w-8 h-8 flex items-center justify-center bg-zinc-800 rounded-lg text-xl font-bold text-zinc-400 group-hover:text-primary transition-colors">
+                <div key={c.id} className="flex items-center gap-6 bg-black/40 p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all">
+                  <div className="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-2xl font-bold text-zinc-400 group-hover:text-primary transition-colors">
                     {c.symbol}
                   </div>
                   <div className="flex-1">
-                    <div className="text-xs font-bold text-zinc-300 uppercase tracking-wider">{c.name}</div>
-                    <div className="text-[8px] font-mono text-zinc-600 mt-1 uppercase">Candidate_Ref_{c.id * 1024}</div>
+                    <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider">{c.name}</div>
+                    <div className="text-[10px] font-mono text-zinc-600 mt-1 uppercase">Candidate_Ref_{c.id * 1024}</div>
                   </div>
                   <motion.button
                     whileTap={{ scale: 0.9 }}
                     onClick={() => handleVote(c.id)}
                     disabled={isPrinting || hasVoted}
-                    className={`w-12 h-12 rounded-full border-4 flex items-center justify-center transition-all shadow-inner ${
+                    className={`w-14 h-14 rounded-full border-4 flex items-center justify-center transition-all shadow-inner ${
                       selected === c.id 
                         ? 'bg-primary border-primary/50 shadow-[0_0_20px_rgba(99,102,241,0.5)]' 
                         : 'bg-zinc-800 border-zinc-700 hover:border-primary/50'
                     } disabled:cursor-not-allowed`}
                   >
-                    <div className={`w-4 h-4 rounded-full ${selected === c.id ? 'bg-white' : 'bg-red-900/50'}`} />
+                    <div className={`w-5 h-5 rounded-full ${selected === c.id ? 'bg-white' : 'bg-red-900/50'}`} />
                   </motion.button>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export function EVMAnimation() {
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="relative w-full max-w-sm bg-zinc-900 border border-white/10 rounded-[2rem] p-8 shadow-2xl aspect-[3/4] flex flex-col"
+            className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-[2rem] p-10 shadow-2xl aspect-[3/4] flex flex-col"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
             
@@ -141,7 +141,7 @@ export function EVMAnimation() {
                       <div className="w-full h-8 bg-zinc-100 flex items-center justify-center">
                          <div className="w-full h-1 bg-black/10 mx-2" />
                       </div>
-                      <div className="text-[6px] font-mono uppercase text-zinc-400">Electra Simulation Protocol v1.5</div>
+                      <div className="text-[6px] font-mono uppercase text-zinc-400">Electron Simulation Protocol v1.5</div>
                     </div>
                   </motion.div>
                 )}
@@ -185,7 +185,7 @@ export function EVMAnimation() {
         {/* Narrative Text */}
         <div className="mt-24 max-w-3xl mx-auto text-center">
             <p className="text-zinc-500 text-lg leading-relaxed font-mono text-sm uppercase tracking-wide">
-                <span className="text-primary mr-3">{">>"}</span> We model the entire democratic journey. From the tactile press of the button to the cryptographic verification of the ballot, Electra ensures that simulation fidelity extends to the very point of voter interaction.
+                <span className="text-primary mr-3">{">>"}</span> We model the entire democratic journey. From the tactile press of the button to the cryptographic verification of the ballot, Electron ensures that simulation fidelity extends to the very point of voter interaction.
             </p>
         </div>
       </div>

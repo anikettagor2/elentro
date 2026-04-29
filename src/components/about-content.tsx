@@ -57,7 +57,7 @@ export function AboutContent() {
               <div className="w-full md:w-1/2 space-y-12">
                   <div className="space-y-4">
                       <span className="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em] font-mono">MISSION // LOGISTICS</span>
-                      <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none font-heading italic">The Electra <span className="text-zinc-800">Intelligence</span></h2>
+                      <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none font-heading italic">The Electron <span className="text-zinc-800">Intelligence</span></h2>
                       <p className="text-zinc-500 text-xl leading-relaxed font-medium">
                           We recognized that modern campaigns didn't just need polling numbers; they needed an engine that could simulate every possible branch of the future, optimizing for the winning outcome at scale.
                       </p>

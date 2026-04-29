@@ -1,18 +1,18 @@
-# Electra: High-Fidelity Election Simulation & Voter Journey
+# Electron: High-Fidelity Election Simulation & Voter Journey
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Gemini AI](https://img.shields.io/badge/AI-Gemini%201.5-blue?style=for-the-badge&logo=google-gemini)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](https://github.com/anikettagor2/Electra/actions)
+[![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](https://github.com/anikettagor2/electron/actions)
 
-> **Live Demo**: [electra-254006836219.us-central1.run.app](https://electra-254006836219.us-central1.run.app/)
+> **Live Demo**: [electron-254006836219.us-central1.run.app](https://electron-254006836219.us-central1.run.app/)
 
-![Electra Banner](./public/og-image.png)
+![Electron Banner](./public/og-image.png)
 
 ## 🗳️ Project Overview
 
-**Electra** is a comprehensive, AI-powered election simulation platform designed to educate users on the **Indian Electoral Process** and model complex political scenarios. Built for the **Virtual Prompt War 2026**, Electra bridges the gap between raw data and immersive storytelling.
+**Electron** is a comprehensive, AI-powered election simulation platform designed to educate users on the **Indian Electoral Process** and model complex political scenarios. Built for the **Virtual Prompt War 2026**, Electron bridges the gap between raw data and immersive storytelling.
 
 The platform features a dual-core experience:
 1.  **Immersive Voter Journey**: A 10-stage interactive walkthrough of the election lifecycle, from electoral roll preparation to the final declaration of results.
@@ -66,4 +66,4 @@ npm test
 - **Mobile First**: Fully responsive design for all screen sizes.
 
 ---
-© 2026 Electra Simulation Engine | Virtual Prompt War Submission
+© 2026 Electron Simulation Engine | Virtual Prompt War Submission

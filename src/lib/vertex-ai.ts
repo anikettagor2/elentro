@@ -10,12 +10,12 @@ export async function generateAIResponseStream(
 ): Promise<ReadableStream> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error('GEMINI_API_KEY is not defined in environment variables.');
-  
+
   const genAI = new GoogleGenerativeAI(apiKey);
 
   try {
     const model = genAI.getGenerativeModel({
-      model: 'gemini-flash-latest', 
+      model: 'gemini-flash-latest',
       systemInstruction: "You are an Election Guide AI for India. Explain processes step-by-step in simple language. Ask follow-up questions if needed. Use Hinglish (Hindi + English mix). Avoid political bias."
     });
 
@@ -35,7 +35,7 @@ export async function generateAIResponseStream(
     const fullPrompt = `${profileContext}\n\nUser Query: ${message}`;
 
     const result = await chat.sendMessageStream(fullPrompt);
-    
+
     return new ReadableStream({
       async start(controller) {
         try {
@@ -74,14 +74,14 @@ export async function generateSimpleAIResponseStream(
 
   try {
     const model = genAI.getGenerativeModel({
-      model: 'gemini-flash-latest', 
+      model: 'gemini-flash-latest',
       systemInstruction: systemInstruction || undefined
     });
 
     const result = await model.generateContentStream({
       contents: [{ role: 'user', parts: [{ text: prompt }] }],
     });
-    
+
     return new ReadableStream({
       async start(controller) {
         try {
