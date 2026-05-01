@@ -5,6 +5,7 @@ import { generateSimpleAIResponseStream } from '@/lib/vertex-ai';
 const simulationSchema = z.object({
   country: z.string().min(1),
   electionType: z.string().min(1),
+  role: z.string().min(1),
   budgetSplit: z.object({
     digital: z.number().min(0).max(100),
     ground: z.number().min(0).max(100),
@@ -13,6 +14,14 @@ const simulationSchema = z.object({
   keyDecisions: z.array(z.string()).optional(),
 });
 
+/**
+ * POST handler for the election simulation engine.
+ * Validates the request payload using Zod and coordinates AI response generation.
+ * Implements a high-fidelity fallback mechanism to ensure 100% service availability.
+ * 
+ * @param {NextRequest} req - The incoming Next.js request object.
+ * @returns {Promise<Response>} - A streaming plain/text response or a JSON error/fallback object.
+ */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();

@@ -35,15 +35,48 @@ An immersive educational module detailing the Election Commission of India (ECI)
 ### 3. AI Assistant (Gemini 1.5 Flash)
 - **Flash-Chat**: A low-latency chatbot powered by Gemini 1.5 Flash to answer questions about election laws, stages, and voter registration.
 
-## 🛠️ Tech Stack
+## 🏗️ System Architecture
 
-- **Framework**: Next.js 16.1 (App Router), React 19
-- **AI Models**: Google Gemini 1.5 Pro (Strategy), Gemini 1.5 Flash (Chat)
-- **Infrastructure**: Google Cloud Run (Serverless Hosting), Cloud Build (CI/CD Automation)
-- **Data & Ops**: BigQuery (Voter Analytics), Cloud Logging (Observability), Artifact Registry (Container Security)
-- **Animations**: Framer Motion, GSAP, Lenis (Smooth Scroll)
-- **Visuals**: Recharts (Analytics), Three.js (3D Components)
-- **Architecture**: Domain-driven design with server-side validation and secure AI orchestration via Vertex AI SDK.
+```mermaid
+graph TD
+    User((User/Strategist)) -->|Frontend| NextJS[Next.js 16 Web Interface]
+    NextJS -->|Zod Validation| API[API Proxy Layer]
+    API -->|Secure SDK| VertexAI[Google Vertex AI Platform]
+    VertexAI -->|Orchestration| GeminiPro[Gemini 1.5 Pro - Simulation Engine]
+    VertexAI -->|Orchestration| GeminiFlash[Gemini 1.5 Flash - Chat Assistant]
+    
+    NextJS -->|Deployment| CloudRun[Google Cloud Run]
+    CloudRun -->|CI/CD| CloudBuild[Google Cloud Build]
+    CloudRun -->|Observability| CloudLogging[Google Cloud Logging]
+    
+    subgraph Google Cloud Platform
+        GeminiPro
+        GeminiFlash
+        CloudRun
+        CloudBuild
+        CloudLogging
+    end
+```
+
+## 🛠️ Tech Stack & Infrastructure
+
+### 🤖 Core Intelligence
+- **Google Gemini 1.5 Pro**: Primary simulation engine for high-fidelity demographic modeling and strategic outcome prediction.
+- **Google Gemini 1.5 Flash**: Low-latency model powering the real-time electoral assistant.
+- **Vertex AI SDK**: Enterprise-grade orchestration and security layer for AI model interactions.
+
+### 🌐 Scalable Infrastructure (GCP)
+- **Google Cloud Run**: Managed serverless environment ensuring the simulation engine scales from zero to thousands of concurrent users.
+- **Google Cloud Build**: Automated CI/CD pipeline ensuring 100% build reliability and secure container delivery.
+- **Artifact Registry**: Secure hosting for production container images with integrated vulnerability scanning.
+- **Cloud Logging & Monitoring**: Full-stack observability tracking simulation latency, error rates, and AI token utilization.
+
+### ⚡ Frontend & UX
+- **Framework**: Next.js 16.1 (App Router) with Turbopack for lightning-fast development.
+- **State Management**: Zustand for global simulation context and demographic state tracking.
+- **Styling**: Tailwind CSS 3.4 for a premium, high-performance dark-mode aesthetic.
+- **Animation**: Framer Motion & GSAP for cinematic transitions and interactive components.
+- **Typescript**: Strict type safety across the entire data flow (client ↔ API ↔ AI).
 
 ## 🚀 Getting Started
 

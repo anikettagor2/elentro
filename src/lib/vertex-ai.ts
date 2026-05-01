@@ -2,6 +2,12 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 /**
  * Reusable function to generate AI response using Google Generative AI (Gemini Flash).
+ * Implements conversational state management and context injection for Indian elections.
+ * 
+ * @param {string} message - The current user message.
+ * @param {object} userProfile - User metadata (age, state, registrationStatus).
+ * @param {Array} history - Conversational history array.
+ * @returns {Promise<ReadableStream>} - A readable stream of the AI's response chunks.
  */
 export async function generateAIResponseStream(
   message: string,

@@ -61,6 +61,7 @@ export function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
                   "text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-primary font-mono",
                   pathname === link.href ? "text-primary" : "text-zinc-500"
@@ -119,6 +120,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
                   className="block text-5xl font-bold text-white hover:text-primary transition-colors tracking-tighter"
                   onClick={() => setIsOpen(false)}
                 >

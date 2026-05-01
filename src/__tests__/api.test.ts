@@ -26,6 +26,7 @@ describe('API Routes Validation', () => {
     const validPayload = {
       country: 'India',
       electionType: 'General Election',
+      role: 'Strategist',
       budgetSplit: { digital: 40, ground: 40, traditional: 20 }
     };
     const req = new NextRequest('http://localhost/api/simulate', {

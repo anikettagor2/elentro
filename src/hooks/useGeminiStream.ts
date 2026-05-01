@@ -1,8 +1,25 @@
 import { useResultStore } from '@/stores/useResultStore';
 
+/**
+ * Hook to manage AI-driven election simulation streaming from Gemini models.
+ * 
+ * @returns {object} - An object containing:
+ *   - runSimulation: (payload: object) => Promise<void> - Function to trigger the simulation.
+ */
 export const useGeminiStream = () => {
   const { setPartialData, setStatus, setError } = useResultStore();
 
+  /**
+   * Triggers the election simulation by calling the server-side API.
+   * Handles streaming response and partial JSON parsing for real-time UI updates.
+   * 
+   * @param {object} payload - Simulation parameters.
+   * @param {string} payload.country - The target country (default: India).
+   * @param {string} payload.electionType - Type of election (General/Assembly).
+   * @param {string} payload.role - User role in simulation (Strategist/Observer).
+   * @param {object} payload.budgetSplit - Resource allocation (digital, ground, traditional).
+   * @param {string[]} [payload.keyDecisions] - Optional strategic policy choices.
+   */
   const runSimulation = async (payload: { country: string; electionType: string; role: string; budgetSplit: { digital: number; ground: number; traditional: number }; keyDecisions?: string[] }) => {
     setStatus('loading');
     setPartialData({});
