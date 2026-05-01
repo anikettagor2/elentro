@@ -133,8 +133,8 @@ export function Chatbot() {
                     <Bot className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-sm font-bold text-indigo-100">Election Assistant</CardTitle>
-                    <p className="text-xs text-indigo-300">Powered by Gemini AI</p>
+                    <CardTitle className="text-sm font-bold text-indigo-100">Electron AI Guide</CardTitle>
+                    <p className="text-xs text-indigo-300">Powered by Google Gemini 1.5 Flash</p>
                   </div>
                 </div>
                 <Button 

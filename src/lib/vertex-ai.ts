@@ -102,11 +102,12 @@ export async function generateSimpleAIResponseStream(
         }
       },
     });
-  } catch (error: any) {
+  } catch (error) {
+    const err = error as Error;
     // If we hit a 503 or overload, retry up to 2 times with backoff
-    if ((error.message?.includes('503') || error.message?.includes('429')) && retryCount < 2) {
+    if ((err.message?.includes('503') || err.message?.includes('429')) && retryCount < 2) {
       const delay = Math.pow(2, retryCount) * 1000;
-      console.warn(`[GoogleAI] Retrying generation due to: ${error.message}. Attempt ${retryCount + 1}. Delay: ${delay}ms`);
+      console.warn(`[GoogleAI] Retrying generation due to: ${err.message}. Attempt ${retryCount + 1}. Delay: ${delay}ms`);
       await new Promise(resolve => setTimeout(resolve, delay));
       return generateSimpleAIResponseStream(prompt, systemInstruction, retryCount + 1);
     }

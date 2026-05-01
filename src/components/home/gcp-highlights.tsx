@@ -11,6 +11,12 @@ const services = [
     color: "from-blue-500 to-cyan-500",
   },
   {
+    title: "BigQuery",
+    description: "Processing petabytes of historical electoral data to provide context for high-fidelity strategy simulations.",
+    icon: Database,
+    color: "from-blue-400 to-blue-600",
+  },
+  {
     title: "Cloud Run",
     description: "Serverless execution environment ensuring high availability and auto-scaling for simulation workloads.",
     icon: Cloud,
@@ -23,8 +29,8 @@ const services = [
     color: "from-yellow-500 to-orange-500",
   },
   {
-    title: "Cloud Load Balancing",
-    description: "Global edge delivery for low-latency access to simulation dashboards across any geography.",
+    title: "Cloud Logging",
+    description: "Centralized telemetry and observability to monitor simulation health and model performance in real-time.",
     icon: Globe,
     color: "from-green-500 to-emerald-500",
   },

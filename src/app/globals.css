@@ -1,10 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "tailwindcss";
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
-
-:root {
+@layer base {
+  :root {
     --background: #030303;
     --foreground: #f0f0f0;
     --card: #0a0a0a;
@@ -40,69 +39,12 @@
     --neon-pink: #ff00ea;
     --neon-green: #39ff14;
     --grid-color: rgba(91, 93, 250, 0.1);
-}
+  }
 
-.dark {
+  .dark {
     --background: #030303;
     --foreground: #f0f0f0;
-    /* ... rest is same as root now ... */
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-
-    --radius-sm: calc(var(--radius) - 2px);
-    --radius-md: var(--radius);
-    --radius-lg: calc(var(--radius) + 2px);
-    --radius-xl: calc(var(--radius) + 4px);
-    --radius-2xl: calc(var(--radius) + 8px);
-
-    --font-sans: var(--font-jakarta);
-    --font-heading: var(--font-space);
-    --font-mono: var(--font-mono);
-
-    --color-sidebar: var(--sidebar);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-ring: var(--sidebar-ring);
-
-    --animate-accordion-down: accordion-down 0.2s ease-out;
-    --animate-accordion-up: accordion-up 0.2s ease-out;
-    --animate-spotlight: spotlight 2s ease .75s 1 forwards;
-
-    @keyframes spotlight {
-        0% {
-            opacity: 0;
-            transform: translate(-72%, -62%) scale(0.5);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translate(-50%, -40%) scale(1);
-        }
-    }
+  }
 }
 
 body {
@@ -116,12 +58,12 @@ body {
 
 /* Premium / Cinematic Utilities (v3 - Enterprise Grade) */
 .glass-panel {
-    @apply bg-background/60 backdrop-blur-xl border border-border;
+    @apply bg-[#030303]/60 backdrop-blur-xl border border-border;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
 .dark .glass-panel {
-    @apply bg-white/2 border-white/8;
+    @apply bg-white/10 border-white/10;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -131,17 +73,17 @@ body {
 }
 
 .dark .enterprise-card {
-    @apply bg-white/1 border-white/6;
+    @apply bg-white/5 border-white/10;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .enterprise-card:hover {
-    @apply border-primary/20 bg-accent/50;
+    @apply border-[#5b5dfa]/20 bg-[#262626]/50;
     transform: translateY(-2px);
 }
 
 .dark .enterprise-card:hover {
-    @apply border-white/12 bg-white/3;
+    @apply border-white/10 bg-white/5;
 }
 
 .premium-header {
@@ -192,7 +134,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30 transition-colors;
+    @apply bg-[#a1a1aa]/20 rounded-full hover:bg-[#a1a1aa]/30 transition-colors;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -229,7 +171,7 @@ body {
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border;
     }
 
     body {

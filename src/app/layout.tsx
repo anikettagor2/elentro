@@ -99,8 +99,10 @@ export default function RootLayout({
              <SmoothScroll />
              <ContactModal />
              <Toaster position="top-center" richColors />
-             {children}
-          </ContactProvider>
+             <main id="main-content">
+               {children}
+             </main>
+           </ContactProvider>
         </Providers>
       </body>
     </html>

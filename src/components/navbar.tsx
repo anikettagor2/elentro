@@ -29,6 +29,7 @@ export function Navbar() {
     { name: "Journey", href: "/journey" },
     { name: "Elections", href: "/elections" },
     { name: "Simulate", href: "/simulate" },
+    { name: "Technical", href: "/technical" },
     { name: "About", href: "/about" },
   ];
 

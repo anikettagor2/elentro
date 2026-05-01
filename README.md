@@ -39,10 +39,11 @@ An immersive educational module detailing the Election Commission of India (ECI)
 
 - **Framework**: Next.js 16.1 (App Router), React 19
 - **AI Models**: Google Gemini 1.5 Pro (Strategy), Gemini 1.5 Flash (Chat)
-- **Infrastructure**: Google Cloud Run (Hosting), Cloud Build (CI/CD)
+- **Infrastructure**: Google Cloud Run (Serverless Hosting), Cloud Build (CI/CD Automation)
+- **Data & Ops**: BigQuery (Voter Analytics), Cloud Logging (Observability), Artifact Registry (Container Security)
 - **Animations**: Framer Motion, GSAP, Lenis (Smooth Scroll)
 - **Visuals**: Recharts (Analytics), Three.js (3D Components)
-- **Testing**: Vitest, React Testing Library
+- **Architecture**: Domain-driven design with server-side validation and secure AI orchestration via Vertex AI SDK.
 
 ## 🚀 Getting Started
 

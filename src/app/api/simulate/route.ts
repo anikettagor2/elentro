@@ -56,8 +56,9 @@ Only output the JSON object, nothing else. Do not include markdown code blocks.`
           'Cache-Control': 'no-cache',
         },
       });
-    } catch (aiError: any) {
-      console.warn('[Electron] AI Generation failed, using fallback:', aiError.message);
+    } catch (aiError) {
+      const err = aiError as Error;
+      console.warn('[Electron] AI Generation failed, using fallback:', err.message);
       
       const fallbackResult = {
         scenario: {
@@ -93,12 +94,13 @@ Only output the JSON object, nothing else. Do not include markdown code blocks.`
         headers: { 'Content-Type': 'application/json' },
       });
     }
-  } catch (error: any) {
-    console.error('[Electron] Critical route error:', error);
+  } catch (error) {
+    const err = error as Error;
+    console.error('[Electron] Critical route error:', err);
     return new Response(
       JSON.stringify({ 
         error: 'Critical failure in simulation route.',
-        details: error?.message || 'Unknown error'
+        details: err?.message || 'Unknown error'
       }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
