@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](https://github.com/anikettagor2/electron/actions)
 
-> **Live Demo**: [electron-254006836219.us-central1.run.app](https://electron-254006836219.us-central1.run.app/)
+> **Live Demo**: [electron.a.run.app](https://electron-bd5i2646dq-uc.a.run.app/)
 
 ![Electron Banner](./public/og-image.png)
 
