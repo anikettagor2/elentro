@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for features/simulation/SimulationPanel.tsx</title>
+    <title>Code coverage report for features/journey/EVMSimulator.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">features/simulation</a> SimulationPanel.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">features/journey</a> EVMSimulator.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">87.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>29/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>20/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>28/30</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -255,7 +255,75 @@
 <a name='L190'></a><a href='#L190'>190</a>
 <a name='L191'></a><a href='#L191'>191</a>
 <a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,17 +332,68 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,6 +406,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,7 +454,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -347,7 +484,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -359,7 +495,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -371,11 +506,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -401,10 +537,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -433,212 +567,258 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useSimulationStore } from '@/stores/useSimulationStore';
-import { useUIStore } from '@/stores/useUIStore';
-import { useGeminiStream } from '@/hooks/useGeminiStream';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
-import { motion, AnimatePresence } from 'framer-motion';
-export const SimulationPanel = () =&gt; {
-  const { currentStep, nextStep, prevStep } = useUIStore();
-  const simulationState = useSimulationStore();
-  const { runSimulation } = useGeminiStream();
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use client";
 &nbsp;
-  const <span class="fstat-no" title="function not covered" >handleRun = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    nextStep();</span>
-<span class="cstat-no" title="statement not covered" >    runSimulation({</span>
-      country: simulationState.country,
-      electionType: simulationState.electionType,
-      role: simulationState.role,
-      budgetSplit: simulationState.budgetSplit,
-      keyDecisions: simulationState.keyDecisions,
-    });
-  };
+import { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Fingerprint, CheckCircle2, Info } from "lucide-react";
+&nbsp;
+/**
+ * Interface representing a candidate in the electoral system.
+ */
+interface Candidate {
+  id: number;
+  name: string;
+  symbol: string;
+  color: string;
+}
+&nbsp;
+const CANDIDATES: Candidate[] = [
+  { id: 1, name: "Progressive Alliance", symbol: "☀", color: "bg-blue-500" },
+  { id: 2, name: "Liberty Front", symbol: "⚖", color: "bg-emerald-500" },
+  { id: 3, name: "Unity Party", symbol: "✋", color: "bg-orange-500" },
+  { id: 4, name: "Green Future", symbol: "☘", color: "bg-green-500" },
+];
+&nbsp;
+/**
+ * EVMSimulator Component
+ * 
+ * Provides a high-fidelity simulation of an Electronic Voting Machine (EVM)
+ * combined with a Voter Verifiable Paper Audit Trail (VVPAT) system.
+ * 
+ * Features:
+ * - Interactive voting sequence with visual feedback
+ * - VVPAT slip generation and display logic
+ * - Accessibility-hardened interface with ARIA roles
+ * - Responsive layout with premium aesthetic
+ */
+export function EVMSimulator() {
+  const [selectedId, setSelectedId] = useState&lt;number | null&gt;(null);
+  const [isVoted, setIsVoted] = useState&lt;boolean&gt;(false);
+  const [showSlip, setShowSlip] = useState&lt;boolean&gt;(false);
+  const [statusMessage, setStatusMessage] = useState&lt;string&gt;("Ready to vote");
+&nbsp;
+  /**
+   * Handles the voting process for a specific candidate.
+   * Prevents multiple votes and triggers the VVPAT slip appearance.
+   * 
+   * @param id The unique identifier of the candidate being voted for.
+   */
+  const handleVote = useCallback((id: number) =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (isVoted) <span class="cstat-no" title="statement not covered" >return;</span>
+    
+    const candidate = CANDIDATES.find(c =&gt; c.id === id);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!candidate) <span class="cstat-no" title="statement not covered" >return;</span>
+&nbsp;
+    setSelectedId(id);
+    setIsVoted(true);
+    setStatusMessage(`Vote cast for ${candidate.name}. Verifying...`);
+    
+    // Stage 1: Simulate VVPAT Slip appearing (approx 800ms delay)
+    const slipTimer = setTimeout(() =&gt; {
+      setShowSlip(true);
+    }, 800);
+&nbsp;
+    // Stage 2: Reset system for next use (approx 5s total duration)
+    const resetTimer = setTimeout(() =&gt; {
+      setShowSlip(false);
+      setIsVoted(false);
+      setSelectedId(null);
+      setStatusMessage("Ready to vote");
+    }, 5000);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    return () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      clearTimeout(slipTimer);</span>
+<span class="cstat-no" title="statement not covered" >      clearTimeout(resetTimer);</span>
+    };
+  }, [isVoted]);
+&nbsp;
+  // Cleanup timers on unmount
+  useEffect(() =&gt; {
+    return () =&gt; {
+      // Logic handled within handleVote's return but added for safety
+    };
+  }, []);
 &nbsp;
   return (
-    &lt;Card className="w-full max-w-3xl mx-auto shadow-2xl backdrop-blur-xl bg-card/90"&gt;
-      &lt;CardContent className="p-6"&gt;
-        &lt;AnimatePresence mode="wait"&gt;
-          {currentStep === 1 &amp;&amp; (
-            &lt;motion.div
-              key="step1"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="space-y-6"
-            &gt;
-              &lt;CardHeader className="px-0 pt-0"&gt;
-                &lt;CardTitle className="text-2xl text-indigo-500"&gt;Setup Election Scenario&lt;/CardTitle&gt;
-                &lt;p className="text-muted-foreground"&gt;Select the context for your simulation.&lt;/p&gt;
-              &lt;/CardHeader&gt;
-              
-              &lt;div className="grid gap-6"&gt;
-                &lt;div&gt;
-                  &lt;label htmlFor="country-select" className="text-sm font-medium mb-2 block text-zinc-300"&gt;Country&lt;/label&gt;
-                  &lt;select
-                    id="country-select"
-                    className="w-full p-2.5 rounded-lg border border-zinc-800 bg-zinc-950 text-white focus:ring-2 focus:ring-indigo-500/50 outline-none transition-all"
-                    value={simulationState.country}
-                    onChange={(e) =&gt; simulationState.setCountry(e.target.value)}
-                  &gt;
-                    &lt;option value="India"&gt;India&lt;/option&gt;
-                    &lt;option value="USA"&gt;USA&lt;/option&gt;
-                    &lt;option value="UK"&gt;UK&lt;/option&gt;
-                  &lt;/select&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                  &lt;label htmlFor="election-type-select" className="text-sm font-medium mb-2 block text-zinc-300"&gt;Election Type&lt;/label&gt;
-                  &lt;select
-                    id="election-type-select"
-                    className="w-full p-2.5 rounded-lg border border-zinc-800 bg-zinc-950 text-white focus:ring-2 focus:ring-indigo-500/50 outline-none transition-all"
-                    value={simulationState.electionType}
-<span class="fstat-no" title="function not covered" >                    onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >simulationState.setElectionType(e.target.value)}</span>
-                  &gt;
-                    &lt;option value="General"&gt;General / National&lt;/option&gt;
-                    &lt;option value="State"&gt;State / Provincial&lt;/option&gt;
-                    &lt;option value="Local"&gt;Local / Municipal&lt;/option&gt;
-                  &lt;/select&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/motion.div&gt;
-          )}
+    &lt;div 
+      className="w-full max-w-7xl mx-auto grid md:grid-cols-[1.3fr_0.7fr] gap-10 items-start"
+      role="region" 
+      aria-label="EVM Voting Simulator"
+    &gt;
+      {/* Control Unit (EVM) */}
+      &lt;div 
+        className="bg-zinc-800 rounded-[2.5rem] p-10 border-8 border-zinc-700 shadow-2xl relative overflow-hidden"
+        aria-live="polite"
+      &gt;
+        &lt;div className="flex items-center justify-between mb-8 px-4"&gt;
+          &lt;div className="flex items-center gap-2"&gt;
+            &lt;div 
+              className={`w-3 h-3 rounded-full ${isVoted ? 'bg-zinc-600' : 'bg-red-500 animate-pulse'} shadow-[0_0_10px_rgba(239,68,68,0.5)]`} 
+              aria-hidden="true"
+            /&gt;
+            &lt;span className="text-[10px] font-black uppercase tracking-tighter text-zinc-500"&gt;
+              {isVoted ? 'Busy' : 'Ready'}
+            &lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div className="text-[10px] font-black uppercase tracking-tighter text-zinc-500"&gt;Model EVM-2026-PRO&lt;/div&gt;
+        &lt;/div&gt;
 &nbsp;
-          {currentStep === 2 &amp;&amp; (
-            &lt;motion.div
-              key="step2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="space-y-6"
+        &lt;div className="space-y-4" role="group" aria-label="Candidate List"&gt;
+          {CANDIDATES.map((c) =&gt; (
+            &lt;div 
+              key={c.id}
+              className={`flex items-center gap-8 p-6 rounded-2xl border-2 transition-all duration-300 ${
+                selectedId === c.id ? 'bg-indigo-500/10 border-indigo-500 scale-[1.02]' : 'bg-black/40 border-transparent hover:border-zinc-600'
+              } ${isVoted &amp;&amp; selectedId !== c.id ? 'opacity-30 grayscale' : ''}`}
             &gt;
-              &lt;CardHeader className="px-0 pt-0"&gt;
-                &lt;CardTitle className="text-2xl text-indigo-500"&gt;Budget Allocation&lt;/CardTitle&gt;
-                &lt;p className="text-muted-foreground"&gt;Distribute your campaign funds (Must sum to 100%).&lt;/p&gt;
-              &lt;/CardHeader&gt;
-              &lt;div className="space-y-8"&gt;
-                &lt;div&gt;
-                  &lt;div className="flex justify-between mb-2 text-sm"&gt;
-                    &lt;label&gt;Digital &amp; Social Media&lt;/label&gt;
-                    &lt;span&gt;{simulationState.budgetSplit.digital}%&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;Slider
-                    value={[simulationState.budgetSplit.digital]}
-<span class="fstat-no" title="function not covered" >                    onValueChange={([</span>val]) =&gt; <span class="cstat-no" title="statement not covered" >simulationState.setBudgetSplit({ ...simulationState.budgetSplit, digital: val })}</span>
-                    max={100}
-                    aria-label="Digital Budget"
-                  /&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                  &lt;div className="flex justify-between mb-2 text-sm"&gt;
-                    &lt;label&gt;Ground Mobilization&lt;/label&gt;
-                    &lt;span&gt;{simulationState.budgetSplit.ground}%&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;Slider
-                    value={[simulationState.budgetSplit.ground]}
-<span class="fstat-no" title="function not covered" >                    onValueChange={([</span>val]) =&gt; <span class="cstat-no" title="statement not covered" >simulationState.setBudgetSplit({ ...simulationState.budgetSplit, ground: val })}</span>
-                    max={100}
-                    aria-label="Ground Budget"
-                  /&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                  &lt;div className="flex justify-between mb-2 text-sm"&gt;
-                    &lt;label&gt;Traditional Media (TV/Print)&lt;/label&gt;
-                    &lt;span&gt;{simulationState.budgetSplit.traditional}%&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;Slider
-                    value={[simulationState.budgetSplit.traditional]}
-<span class="fstat-no" title="function not covered" >                    onValueChange={([</span>val]) =&gt; <span class="cstat-no" title="statement not covered" >simulationState.setBudgetSplit({ ...simulationState.budgetSplit, traditional: val })}</span>
-                    max={100}
-                    aria-label="Traditional Budget"
-                  /&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/motion.div&gt;
-          )}
-&nbsp;
-          {currentStep === 3 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;motion.div</span>
-              key="step3"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="space-y-6"
-            &gt;
-              &lt;CardHeader className="px-0 pt-0"&gt;
-                &lt;CardTitle className="text-2xl text-indigo-500"&gt;Key Strategies&lt;/CardTitle&gt;
-                &lt;p className="text-muted-foreground"&gt;Select defining actions for your campaign.&lt;/p&gt;
-              &lt;/CardHeader&gt;
-              &lt;ToggleGroup
-                type="multiple"
-                className="grid grid-cols-2 gap-4 justify-start"
-                value={simulationState.keyDecisions}
-<span class="fstat-no" title="function not covered" >                onValueChange={(v</span>al) =&gt; {
-                  // We manually handle this if using controlled Radix toggle group
-                }}
+              &lt;div 
+                className={`w-14 h-14 rounded-xl ${c.color} flex items-center justify-center text-3xl font-bold text-white shadow-lg`}
+                aria-hidden="true"
               &gt;
-                {['Aggressive Youth Outreach', 'Welfare Promises', 'Polarizing Narrative', 'Anti-Incumbency Focus'].<span class="fstat-no" title="function not covered" >map((d</span>ecision) =&gt; (
-<span class="cstat-no" title="statement not covered" >                  &lt;ToggleGroupItem</span>
-                    key={decision}
-                    value={decision}
-<span class="fstat-no" title="function not covered" >                    onClick={() =&gt; <span class="cstat-no" title="statement not covered" >s</span>imulationState.toggleDecision(decision)}</span>
-                    className="h-auto p-4 flex-col items-start border-2 border-transparent data-[state=on]:border-indigo-500 bg-muted"
-                  &gt;
-                    &lt;span className="font-semibold"&gt;{decision}&lt;/span&gt;
-                  &lt;/ToggleGroupItem&gt;
-                ))}
-              &lt;/ToggleGroup&gt;
-            &lt;/motion.div&gt;
-          )}
+                {c.symbol}
+              &lt;/div&gt;
+              &lt;div className="flex-1"&gt;
+                &lt;p className="text-lg font-bold text-white"&gt;{c.name}&lt;/p&gt;
+                &lt;p className="text-xs text-zinc-500 font-mono"&gt;SERIAL: 2026-IN-{c.id}&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;button
+                onClick={() =&gt; handleVote(c.id)}
+                disabled={isVoted}
+                className={`w-14 h-14 rounded-full border-4 shadow-inner flex items-center justify-center transition-all duration-300 ${
+                  selectedId === c.id 
+                    ? 'bg-red-500 border-red-400 scale-110' 
+                    : 'bg-blue-600 border-zinc-700 hover:bg-blue-500 hover:border-zinc-600 active:scale-90 cursor-pointer'
+                } disabled:cursor-not-allowed`}
+                aria-label={`Vote for ${c.name}`}
+                aria-pressed={selectedId === c.id}
+              &gt;
+                &lt;div className={`w-5 h-5 rounded-full ${selectedId === c.id ? 'bg-white animate-ping' : 'bg-white/20'}`} /&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          ))}
+        &lt;/div&gt;
 &nbsp;
-          {currentStep === 4 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;motion.div</span>
-              key="step4"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="space-y-6 text-center py-8"
+        &lt;AnimatePresence&gt;
+          {isVoted &amp;&amp; (
+            &lt;motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/70 backdrop-blur-[4px] flex items-center justify-center z-20"
             &gt;
-              &lt;h2 className="text-3xl font-bold text-indigo-500 mb-4"&gt;Ready to Simulate?&lt;/h2&gt;
-              &lt;p className="text-muted-foreground mb-8"&gt;
-                Your parameters will be processed by our AI engine to generate realistic, cause-and-effect outcomes.
-              &lt;/p&gt;
-              &lt;Button size="lg" onClick={handleRun} className="w-full text-lg h-14 bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/25"&gt;
-                Run AI Simulation
-              &lt;/Button&gt;
+              &lt;div className="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-2xl flex flex-col items-center gap-6"&gt;
+                &lt;div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center text-red-500"&gt;
+                  &lt;Fingerprint className="w-8 h-8 animate-pulse" /&gt;
+                &lt;/div&gt;
+                &lt;div className="text-center"&gt;
+                  &lt;p className="text-sm font-black uppercase tracking-[0.2em] text-zinc-400 mb-1"&gt;Processing Vote&lt;/p&gt;
+                  &lt;p className="text-[10px] text-zinc-600 font-mono"&gt;DO NOT POWER OFF&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
             &lt;/motion.div&gt;
           )}
         &lt;/AnimatePresence&gt;
+      &lt;/div&gt;
 &nbsp;
-        {currentStep &lt; 4 &amp;&amp; (
-          &lt;div className="flex justify-between mt-8 pt-6 border-t border-border"&gt;
-            &lt;Button variant="outline" onClick={prevStep} disabled={currentStep === 1} aria-label="Go to previous step"&gt;
-              Previous
-            &lt;/Button&gt;
-            &lt;Button onClick={nextStep} aria-label="Go to next step"&gt;
-              Next Step
-            &lt;/Button&gt;
+      {/* VVPAT Printer Unit */}
+      &lt;div className="space-y-8"&gt;
+        &lt;div 
+          className="bg-zinc-900 rounded-[2rem] p-10 border border-zinc-800 shadow-xl relative min-h-[350px] flex flex-col items-center justify-center text-center overflow-hidden"
+          aria-label="VVPAT Verification Window"
+        &gt;
+          &lt;div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-2"&gt;
+            &lt;div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /&gt;
+            &lt;span className="text-[10px] font-black uppercase tracking-widest text-zinc-500"&gt;VVPAT SECURE FEED&lt;/span&gt;
           &lt;/div&gt;
-        )}
-      &lt;/CardContent&gt;
-    &lt;/Card&gt;
+&nbsp;
+          &lt;AnimatePresence mode="wait"&gt;
+            {showSlip ? (
+              &lt;motion.div
+                key="slip"
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 200, opacity: 0 }}
+                transition={{ type: "spring", damping: 20 }}
+                className="bg-zinc-50 text-zinc-900 p-8 rounded-sm shadow-2xl w-56 font-mono text-[10px] space-y-6 border-x border-zinc-300"
+                data-testid="vvpat-slip"
+              &gt;
+                &lt;div className="border-b-2 border-zinc-900 pb-4 text-center font-black text-xs uppercase leading-tight"&gt;
+                  Voter Verifiable&lt;br/&gt;Paper Audit Trail
+                &lt;/div&gt;
+                &lt;div className="space-y-3"&gt;
+                  &lt;div className="flex flex-col items-start gap-1"&gt;
+                    &lt;span className="text-[8px] uppercase text-zinc-500"&gt;Candidate&lt;/span&gt;
+                    &lt;span className="font-black text-xs uppercase"&gt;{CANDIDATES.find(c =&gt; c.id === selectedId)?.name}&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div className="flex flex-col items-start gap-1"&gt;
+                    &lt;span className="text-[8px] uppercase text-zinc-500"&gt;Symbol&lt;/span&gt;
+                    &lt;span className="text-4xl font-bold"&gt;{CANDIDATES.find(c =&gt; c.id === selectedId)?.symbol}&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div className="pt-2 border-t border-zinc-200 flex justify-between items-center text-[8px]"&gt;
+                    &lt;span&gt;{new Date().toLocaleDateString()}&lt;/span&gt;
+                    &lt;span&gt;{new Date().toLocaleTimeString()}&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="pt-4 flex flex-col items-center gap-3"&gt;
+                  &lt;div className="w-full h-10 bg-[url('https://www.transparenttextures.com/patterns/barcode.png')] opacity-20 contrast-150" /&gt;
+                  &lt;p className="text-[7px] font-black tracking-widest text-zinc-400"&gt;ENCRYPTED AUDIT RECORD&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/motion.div&gt;
+            ) : (
+              &lt;motion.div 
+                key="placeholder"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-6"
+              &gt;
+                &lt;div className="w-24 h-24 bg-zinc-800/50 rounded-full flex items-center justify-center mx-auto border border-zinc-700/50"&gt;
+                  &lt;Info className="w-10 h-10 text-zinc-600" /&gt;
+                &lt;/div&gt;
+                &lt;div className="space-y-2"&gt;
+                  &lt;p className="text-sm font-bold text-zinc-400"&gt;Verification Pending&lt;/p&gt;
+                  &lt;p className="text-xs text-zinc-500 max-w-[200px] leading-relaxed"&gt;
+                    Cast your vote on the EVM unit to verify your selection in the VVPAT window.
+                  &lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/motion.div&gt;
+            )}
+          &lt;/AnimatePresence&gt;
+&nbsp;
+          {/* Secure Drop Box Indication */}
+          &lt;div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-40 h-1.5 bg-zinc-800 rounded-full overflow-hidden"&gt;
+             &lt;motion.div 
+               className="h-full bg-emerald-500/20"
+               animate={{ x: ["-100%", "100%"] }}
+               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+             /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+&nbsp;
+        {/* Educational Fact Card */}
+        &lt;div className="p-8 rounded-3xl bg-indigo-500/5 border border-indigo-500/10 shadow-lg"&gt;
+          &lt;h4 className="text-sm font-black mb-3 flex items-center gap-2 text-indigo-400 uppercase tracking-wider"&gt;
+            &lt;CheckCircle2 className="w-4 h-4" /&gt;
+            Electoral Integrity
+          &lt;/h4&gt;
+          &lt;p className="text-xs text-zinc-400 leading-relaxed font-medium"&gt;
+            The VVPAT system provides a physical audit trail. The printed slip is visible through the glass for 7 seconds, allowing the voter to confirm their choice before it automatically detaches and falls into a sealed collection box.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   );
-};
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
