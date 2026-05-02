@@ -12,9 +12,20 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowLeft, RefreshCcw } from "lucide-react";
 
 import { ManifestoGenerator } from "@/components/journey/manifesto-generator";
+import { JourneyLoading } from "@/components/journey/loading-overlay";
+import { useEffect, useState } from "react";
 
 export default function JourneyPage() {
   const { currentStage, setStage, resetJourney } = useJourneyStore();
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, [currentStage]);
+
+  if (isLoading) return <JourneyLoading />;
 
   const renderStage = () => {
     switch (currentStage) {
