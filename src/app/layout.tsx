@@ -19,9 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Electron | AI-Powered Election Simulation & Journey",
-  description: "Experience the Indian electoral process through a high-fidelity immersive journey. Predict outcomes using Google Gemini 1.5 Pro with demographic modeling and real-time strategy analysis.",
-  keywords: ["Election Simulation", "Indian Elections", "EVM Simulator", "Voter Journey", "Gemini AI", "Predictive Analytics", "Democracy Tech", "Google Cloud", "Vertex AI"],
+  title: "ELENTRO | AI-Powered Electoral Intelligence",
+  description: "Next-generation election simulation and strategy platform. Powered by Google Gemini and advanced 3D geospatial intelligence.",
+  keywords: ["Election", "Simulation", "AI", "India", "ECI", "Democracy", "Gemini", "Elentro"],
   authors: [{ name: "Aniket Tagor" }],
   creator: "Aniket Tagor",
   publisher: "Electron Sim Engine",
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Electron | The Future of Election Simulation",
     description: "Immersive 10-stage election journey & predictive simulation engine powered by Google Gemini and Vertex AI.",
-    url: "https://electron-254006836219.us-central1.run.app",
+    url: "https://electron-bd5i2646dq-uc.a.run.app",
     siteName: "Electron Sim Engine",
     images: [
       {
-        url: "https://electron-254006836219.us-central1.run.app/og-image.png",
+        url: "https://electron-bd5i2646dq-uc.a.run.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Electron Election Simulation Dashboard",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Electron | AI-Powered Election Simulation",
     description: "Experience the Indian electoral process with high-fidelity simulations powered by Gemini 1.5 Pro and Vertex AI.",
-    images: ["https://electron-254006836219.us-central1.run.app/og-image.png"],
+    images: ["https://electron-bd5i2646dq-uc.a.run.app/og-image.png"],
     creator: "@anikettagor",
   },
   robots: {
@@ -71,6 +71,7 @@ import { ContactProvider } from "@/providers/contact-provider";
 import { ContactModal } from "@/components/contact-modal";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
+import { ChatAssistant } from "@/components/chat/assistant";
 
 export default function RootLayout({
   children,
@@ -102,6 +103,7 @@ export default function RootLayout({
              <main id="main-content">
                {children}
              </main>
+             <ChatAssistant />
            </ContactProvider>
         </Providers>
       </body>

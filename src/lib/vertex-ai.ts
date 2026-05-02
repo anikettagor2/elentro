@@ -66,13 +66,18 @@ export async function generateAIResponseStream(
   }
 }
 
-/**
  * Simpler generation function for non-chat interactions (e.g. simulation results).
  * Includes automatic retry mechanism for 503/high-demand scenarios.
+ * 
+ * @param {string} prompt - The core instructions and context.
+ * @param {string} [systemInstruction] - Optional behavioral constraints.
+ * @param {string} [modelName] - The specific Gemini model (default: gemini-1.5-pro-latest).
+ * @param {number} [retryCount] - Internal counter for recursion.
  */
 export async function generateSimpleAIResponseStream(
   prompt: string,
   systemInstruction?: string,
+  modelName: string = 'gemini-1.5-pro-latest',
   retryCount = 0
 ): Promise<ReadableStream> {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -82,7 +87,7 @@ export async function generateSimpleAIResponseStream(
 
   try {
     const model = genAI.getGenerativeModel({
-      model: 'gemini-flash-latest',
+      model: modelName,
       systemInstruction: systemInstruction || undefined
     });
 
@@ -101,7 +106,7 @@ export async function generateSimpleAIResponseStream(
           }
         } catch (streamErr) {
           const err = streamErr as Error;
-          console.error('[GoogleAI] Simple Stream error:', err);
+          console.error(`[GoogleAI] Stream error [${modelName}]:`, err);
           controller.enqueue(new TextEncoder().encode(`\n\n[Error during streaming: ${err.message}]`));
         } finally {
           controller.close();
@@ -113,12 +118,12 @@ export async function generateSimpleAIResponseStream(
     // If we hit a 503 or overload, retry up to 2 times with backoff
     if ((err.message?.includes('503') || err.message?.includes('429')) && retryCount < 2) {
       const delay = Math.pow(2, retryCount) * 1000;
-      console.warn(`[GoogleAI] Retrying generation due to: ${err.message}. Attempt ${retryCount + 1}. Delay: ${delay}ms`);
+      console.warn(`[GoogleAI] Retrying ${modelName} due to: ${err.message}. Attempt ${retryCount + 1}. Delay: ${delay}ms`);
       await new Promise(resolve => setTimeout(resolve, delay));
-      return generateSimpleAIResponseStream(prompt, systemInstruction, retryCount + 1);
+      return generateSimpleAIResponseStream(prompt, systemInstruction, modelName, retryCount + 1);
     }
     
-    console.error('[GoogleAI] Simple Generation error:', error);
+    console.error(`[GoogleAI] Generation error [${modelName}]:`, error);
     throw error;
   }
 }

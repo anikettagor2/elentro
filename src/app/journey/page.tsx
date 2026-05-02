@@ -1,187 +1,157 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  Users, 
-  Calendar, 
-  FileText, 
-  CheckCircle, 
-  ShieldAlert, 
-  Megaphone, 
-  HandMetal, 
-  Fingerprint, 
-  BarChart3, 
-  Trophy 
-} from "lucide-react";
-import { VoterRegistration } from "@/features/journey/VoterRegistration";
-import { EVMSimulator } from "@/features/journey/EVMSimulator";
+import { useJourneyStore } from "@/stores/useJourneyStore";
+import { JourneyProgress } from "@/components/journey/progress";
+import { VoterRegistration } from "@/components/journey/voter-registration";
+import { PollingMap } from "@/components/journey/polling-map";
+import { GlobeScene } from "@/components/3d/scene";
+import { Button } from "@/components/ui/button";
+import { ChevronRight, ArrowLeft, RefreshCcw } from "lucide-react";
 
-const STAGES = [
-  {
-    title: "Electoral Rolls",
-    description: "Preparation and revision of the list of eligible voters by the ECI.",
-    icon: Users,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10",
-    simulator: VoterRegistration
-  },
-  {
-    title: "Election Schedule",
-    description: "Official announcement of poll dates and implementation of the Model Code of Conduct.",
-    icon: Calendar,
-    color: "text-purple-400",
-    bg: "bg-purple-400/10",
-  },
-  {
-    title: "Issue of Notification",
-    description: "Formal call for candidates to file their nominations for the respective constituencies.",
-    icon: FileText,
-    color: "text-indigo-400",
-    bg: "bg-indigo-400/10",
-  },
-  {
-    title: "Nominations & Scrutiny",
-    description: "Filing of nomination papers by candidates and rigorous vetting by the ECI.",
-    icon: ShieldAlert,
-    color: "text-amber-400",
-    bg: "bg-amber-400/10",
-  },
-  {
-    title: "Withdrawal Period",
-    description: "The timeframe allowed for candidates to withdraw their names from the contest.",
-    icon: CheckCircle,
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
-  },
-  {
-    title: "Campaign Period",
-    description: "Political parties engage in rallies, digital outreach, and manifesto releases.",
-    icon: Megaphone,
-    color: "text-rose-400",
-    bg: "bg-rose-400/10",
-  },
-  {
-    title: "Polling Day",
-    description: "Voters cast their ballots using Electronic Voting Machines (EVMs) and VVPATs.",
-    icon: Fingerprint,
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
-    simulator: EVMSimulator
-  },
-  {
-    title: "Counting of Votes",
-    description: "Secure counting of EVM data under the supervision of the Returning Officer.",
-    icon: BarChart3,
-    color: "text-orange-400",
-    bg: "bg-orange-400/10",
-  },
-  {
-    title: "Declaration of Results",
-    description: "Official announcement of the winners and issue of certificate of election.",
-    icon: Trophy,
-    color: "text-yellow-400",
-    bg: "bg-yellow-400/10",
-  },
-  {
-    title: "Government Formation",
-    description: "The final step where the majority party or coalition forms the new administration.",
-    icon: HandMetal,
-    color: "text-zinc-400",
-    bg: "bg-zinc-400/10",
-  }
-];
+import { ManifestoGenerator } from "@/components/journey/manifesto-generator";
 
 export default function JourneyPage() {
-  return (
-    <div className="min-h-screen bg-black text-white selection:bg-primary/20 selection:text-primary">
-      <Navbar />
-      
-      <main className="container mx-auto px-4 pt-32 pb-24">
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <motion.div
+  const { currentStage, setStage, resetJourney } = useJourneyStore();
+
+  const renderStage = () => {
+    switch (currentStage) {
+      case 'overview':
+        return (
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+            className="text-center space-y-12 max-w-4xl mx-auto"
           >
-            <ShieldAlert className="w-3 h-3" />
-            Educational Module
+            <div className="space-y-6">
+              <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase italic">
+                Electoral <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-white to-indigo-500">Journey</span>
+              </h1>
+              <p className="text-zinc-500 text-xl font-medium font-mono uppercase tracking-tight">
+                Step into the mechanics of the world's largest democracy. 
+                From voter registration to the declaration of results.
+              </p>
+            </div>
+            
+            <Button 
+              onClick={() => setStage('registration')}
+              size="lg"
+              className="bg-white text-black hover:bg-zinc-200 rounded-full h-16 px-12 font-black uppercase tracking-widest text-lg shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+            >
+              Initialize Journey
+            </Button>
           </motion.div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500">
-            The 10-Stage Election Lifecycle
-          </h1>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Explore the rigorous process managed by the Election Commission of India (ECI) to ensure a free and fair democratic exercise.
-          </p>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-800 hidden md:block" />
-
-          <div className="space-y-12 md:space-y-24">
-            {STAGES.map((stage, i) => (
-              <motion.div
-                key={stage.title}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`relative flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16`}
+        );
+      case 'registration':
+        return <VoterRegistration />;
+      case 'manifesto':
+        return <ManifestoGenerator />;
+      case 'polling':
+        return (
+          <div className="space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-4xl font-black uppercase tracking-tighter">Locate Polling Station</h2>
+              <p className="text-zinc-500 font-mono text-xs">Simulating Geographic Allocation // Stage 07</p>
+            </div>
+            <PollingMap />
+            <div className="flex justify-center">
+              <Button 
+                onClick={() => setStage('counting')}
+                className="bg-indigo-600 rounded-xl h-12 px-8 font-bold"
               >
-                {/* Number Indicator */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-xs font-bold z-10 hidden md:flex">
-                  {i + 1}
-                </div>
-
-                <div className={`${stage.simulator ? 'w-full' : 'flex-1'} w-full`}>
-                  <div className={`p-8 rounded-3xl border border-white/5 bg-zinc-900/30 backdrop-blur-sm hover:bg-zinc-900/50 transition-all group ${stage.simulator ? 'md:p-12' : ''}`}>
-                    <div className={`w-14 h-14 rounded-2xl ${stage.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                      <stage.icon className={`w-7 h-7 ${stage.color}`} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 tracking-tight">{stage.title}</h3>
-                    <p className={`text-zinc-400 leading-relaxed mb-8 ${stage.simulator ? 'max-w-2xl' : ''}`}>
-                      {stage.description}
-                    </p>
-
-                    {stage.simulator && (
-                      <div className="mt-8 border-t border-white/5 pt-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-10">
-                          <Fingerprint className="w-3 h-3" />
-                          Interactive Experience
-                        </div>
-                        <div className="w-full">
-                          <stage.simulator />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                
-                {!stage.simulator && <div className="flex-1 hidden md:block" />}
-              </motion.div>
-            ))}
+                Continue to Counting
+              </Button>
+            </div>
           </div>
-        </div>
+        );
+      case 'counting':
+        return <VoteCounting />;
+      case 'result':
+        return (
+          <div className="text-center space-y-8 py-20">
+             <motion.div
+               initial={{ scale: 0.8, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               className="space-y-4"
+             >
+               <h2 className="text-6xl font-black uppercase tracking-tighter text-emerald-500 italic">VICTORY</h2>
+               <p className="text-zinc-400 font-mono">Election Cycle Completed Successfully</p>
+             </motion.div>
+             <Button 
+               onClick={resetJourney}
+               variant="outline"
+               className="border-white/10 hover:bg-white/5 rounded-full px-8"
+             >
+               <RefreshCcw className="w-4 h-4 mr-2" /> Restart Simulation
+             </Button>
+          </div>
+        );
+      default:
+        return (
+          <div className="text-center space-y-8">
+            <h2 className="text-3xl font-bold uppercase tracking-tighter text-zinc-500">Module Under Construction</h2>
+            <p className="text-zinc-600 font-mono text-sm max-w-md mx-auto">
+              Our engineering team is currently calibrating the high-fidelity simulation for this stage.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button 
+                variant="outline"
+                onClick={() => setStage('polling')}
+                className="rounded-xl"
+              >
+                Skip to Polling
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={() => setStage('overview')}
+                className="rounded-xl"
+              >
+                Back to Start
+              </Button>
+            </div>
+          </div>
+        );
+    }
+  };
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="mt-32 p-12 rounded-[3rem] bg-gradient-to-br from-indigo-600 to-violet-700 text-center text-white overflow-hidden relative"
-        >
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6 relative">Ready to apply these stages?</h2>
-          <p className="text-indigo-100 text-lg mb-10 max-w-xl mx-auto relative">
-            Take your knowledge to the next level by running a high-fidelity simulation of an actual election campaign.
-          </p>
-          <a
-            href="/simulate"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black text-lg hover:scale-105 transition-transform relative shadow-2xl"
+  return (
+    <div className="min-h-screen bg-black text-white selection:bg-primary/20 selection:text-primary relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
+        <GlobeScene />
+      </div>
+
+      <Navbar />
+      <JourneyProgress />
+      
+      <main className="container relative z-10 mx-auto px-4 pt-48 pb-24 min-h-[70vh] flex flex-col items-center justify-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentStage}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full"
           >
-            Start AI Simulation
-          </a>
-        </motion.div>
+            {renderStage()}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Global Controls */}
+        <div className="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-900/50 backdrop-blur-md p-2 rounded-full border border-white/5">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={() => resetJourney()}
+            className="text-zinc-500 hover:text-white rounded-full font-mono text-[10px]"
+          >
+            <RefreshCcw className="w-3 h-3 mr-2" /> RESET_EXP
+          </Button>
+        </div>
       </main>
 
       <Footer />

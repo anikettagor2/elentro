@@ -1,103 +1,80 @@
-# Electron: High-Fidelity Election Simulation & Voter Journey
+# ⚡ ELENTRO
 
-[![Next.js 16](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Gemini AI](https://img.shields.io/badge/AI-Gemini%201.5-blue?style=for-the-badge&logo=google-gemini)](https://ai.google.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](https://github.com/anikettagor2/electron/actions)
+**Next-Generation Electoral Intelligence & Simulation Platform**
 
-> **Live Demo**: [electron.a.run.app](https://electron-bd5i2646dq-uc.a.run.app/)
+Elentro is a high-fidelity, AI-powered election simulation platform designed to mirror the complexities of the Indian electoral process. Built with **Next.js 15**, **Three.js**, and **Google Gemini 1.5 Pro**, it provides an immersive, data-driven journey from voter registration to result declaration.
 
-![Electron Banner](./public/og-image.png)
-
-## 🗳️ Project Overview
-
-**Electron** is a comprehensive, AI-powered election simulation platform designed to educate users on the **Indian Electoral Process** and model complex political scenarios. Built for the **Virtual Prompt War 2026**, Electron bridges the gap between raw data and immersive storytelling.
-
-The platform features a dual-core experience:
-1.  **Immersive Voter Journey**: A 10-stage interactive walkthrough of the election lifecycle, from electoral roll preparation to the final declaration of results.
-2.  **Predictive Simulation Engine**: Powered by **Google Gemini 1.5 Pro**, allowing strategists to model cause-and-effect outcomes based on budget, strategy, and demographics.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/anikettagor2/elentro/actions/workflows/main.yml/badge.svg)](https://github.com/anikettagor2/elentro/actions)
 
 ## 🌟 Key Features
 
-### 1. The 10-Stage Election Journey
-An immersive educational module detailing the Election Commission of India (ECI) workflow:
-- **Interactive Voter Registration**: A simulator for verifying voter identity and biometrics.
-- **Nomination & Scrutiny**: Visual guide to the candidate vetting process.
-- **The Campaign**: Modeling the impact of digital vs. ground mobilization.
-- **Interactive EVM Simulator**: A high-fidelity module with a functional VVPAT slip generator.
+### 1. 🌍 Immersive 3D Geospatial Intelligence
+Utilizes `Three.js` and `@react-three/fiber` to visualize global electoral data points on a high-fidelity 3D globe. Real-time atmospheric effects and interactive spatial markers provide a cinematic data exploration experience.
 
-### 2. AI-Driven Simulation (Gemini 1.5 Pro)
-- **Multi-Dimensional Modeling**: Analyze how decisions impact Urban, Rural, Youth, and Diaspora segments.
-- **Dynamic Budgeting**: Real-time visualization of resource allocation impact.
-- **Strategic Intelligence Reports**: Automated, deep-dive insights generated after each simulation using Gemini 1.5 Pro.
+### 2. 🤖 AI Strategic Assistant (Gemini-Powered)
+A persistent, context-aware AI assistant that leverages **Google Gemini 1.5 Pro** to provide:
+- Real-time campaign strategy analysis.
+- Demographic sentiment modeling.
+- Automated election manifesto generation.
+- Real-time Q&A on ECI protocols and constitutional mandates.
 
-### 3. AI Assistant (Gemini 1.5 Flash)
-- **Flash-Chat**: A low-latency chatbot powered by Gemini 1.5 Flash to answer questions about election laws, stages, and voter registration.
+### 3. 🗺️ Interactive Polling Station Mapping
+Integration with `Leaflet` for precise geographic allocation of polling stations. Features include:
+- Dark-mode cartography.
+- Virtual station discovery.
+- Simulated voter density heatmaps.
 
-## 🏗️ System Architecture
+### 4. 📈 Real-time Tabulation & Visualization
+Dynamic counting simulation with `Recharts`. Experience the high-stakes environment of result declaration with live-animating data streams and secure checksum verification simulations.
 
-```mermaid
-graph TD
-    User((User/Strategist)) -->|Frontend| NextJS[Next.js 16 Web Interface]
-    NextJS -->|Zod Validation| API[API Proxy Layer]
-    API -->|Secure SDK| VertexAI[Google Vertex AI Platform]
-    VertexAI -->|Orchestration| GeminiPro[Gemini 1.5 Pro - Simulation Engine]
-    VertexAI -->|Orchestration| GeminiFlash[Gemini 1.5 Flash - Chat Assistant]
-    
-    NextJS -->|Deployment| CloudRun[Google Cloud Run]
-    CloudRun -->|CI/CD| CloudBuild[Google Cloud Build]
-    CloudRun -->|Observability| CloudLogging[Google Cloud Logging]
-    
-    subgraph Google Cloud Platform
-        GeminiPro
-        GeminiFlash
-        CloudRun
-        CloudBuild
-        CloudLogging
-    end
-```
+### 5. 🛡️ Enterprise-Grade Security
+- **Secure ID Generation**: Simulated ECI-protocol handshakes for virtual voter registration.
+- **Header Protection**: Advanced CSP and XSS protection via custom Next.js middleware.
+- **Stateless Architecture**: Scalable, high-performance infrastructure ready for Google Cloud Run.
 
-## 🛠️ Tech Stack & Infrastructure
+## 🛠️ Tech Stack
 
-### 🤖 Core Intelligence
-- **Google Gemini 1.5 Pro**: Primary simulation engine for high-fidelity demographic modeling and strategic outcome prediction.
-- **Google Gemini 1.5 Flash**: Low-latency model powering the real-time electoral assistant.
-- **Vertex AI SDK**: Enterprise-grade orchestration and security layer for AI model interactions.
-
-### 🌐 Scalable Infrastructure (GCP)
-- **Google Cloud Run**: Managed serverless environment ensuring the simulation engine scales from zero to thousands of concurrent users.
-- **Google Cloud Build**: Automated CI/CD pipeline ensuring 100% build reliability and secure container delivery.
-- **Artifact Registry**: Secure hosting for production container images with integrated vulnerability scanning.
-- **Cloud Logging & Monitoring**: Full-stack observability tracking simulation latency, error rates, and AI token utilization.
-
-### ⚡ Frontend & UX
-- **Framework**: Next.js 16.1 (App Router) with Turbopack for lightning-fast development.
-- **State Management**: Zustand for global simulation context and demographic state tracking.
-- **Styling**: Tailwind CSS 3.4 for a premium, high-performance dark-mode aesthetic.
-- **Animation**: Framer Motion & GSAP for cinematic transitions and interactive components.
-- **Typescript**: Strict type safety across the entire data flow (client ↔ API ↔ AI).
+- **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS
+- **3D Engine**: Three.js, React Three Fiber, Framer Motion
+- **AI/ML**: Google Gemini 1.5 Pro (Vertex AI API)
+- **State Management**: Zustand (with Persistence)
+- **Mapping**: React-Leaflet, OpenStreetMap
+- **Charts**: Recharts
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 20+
-- Google Gemini API Key
+- Node.js 18+
+- npm or pnpm
+- Google Cloud API Key (with Gemini 1.5 Pro enabled)
 
 ### Installation
-1.  `npm install`
-2.  Create `.env.local` with `GEMINI_API_KEY`.
-3.  `npm run dev`
 
-### Testing
-Run the comprehensive test suite:
-```bash
-npm test
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anikettagor2/elentro.git
+   ```
 
-## 📜 Compliance & Accessibility
-- **WCAG 2.1 Compliant**: High contrast dark mode, ARIA labels, and semantic HTML.
-- **Mobile First**: Fully responsive design for all screen sizes.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure Environment Variables:
+   Create a `.env.local` file:
+   ```env
+   NEXT_PUBLIC_GEMINI_API_KEY=your_api_key_here
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## ⚖️ License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-© 2026 Electron Simulation Engine | Virtual Prompt War Submission
+Built with ❤️ by **Aniket Tagor** for the future of Digital Democracy.

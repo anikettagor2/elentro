@@ -2,97 +2,99 @@
 
 import { Button } from "./ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Play } from "lucide-react";
-import { useRef } from "react";
+import { ChevronRight, Zap } from "lucide-react";
+import { useRef, Suspense } from "react";
 import Link from "next/link";
-import { useContact } from "@/providers/contact-provider";
+import { GlobeScene } from "./3d/scene";
 
 export function Hero() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
-  const { openContact } = useContact();
 
   // Parallax effects
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
   const textY = useTransform(scrollY, [0, 500], [0, 100]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28">
-      {/* Background Elements - With Parallax */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background z-0" />
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-black">
+      {/* Background Atmosphere */}
+      <div className="absolute inset-0 bg-radial-gradient from-indigo-500/10 via-transparent to-transparent opacity-40 z-0" />
       
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-primary/20 rounded-full blur-[128px] animate-pulse" 
-      />
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse delay-75" 
-      />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-0 opacity-20" />
+      {/* 3D Scene Background */}
+      <div className="absolute inset-0 z-0 opacity-60">
+        <GlobeScene />
+      </div>
 
-      <div className="container relative z-10 px-4 sm:px-6 text-center">
-        <motion.div
-          style={{ y: textY }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8 max-w-4xl mx-auto"
-        >
+      <div className="container relative z-10 px-4 sm:px-6">
+        <div className="flex flex-col items-center text-center space-y-8 max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wide mb-4"
-          >
-            PREMIUM VIDEO EDITING AGENCY
-          </motion.div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading tracking-tight leading-tight">
-            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500 glow-text">Cinematic</span> <br className="hidden md:block" />
-            Digital Experiences
-          </h1>
-
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
-            We transform raw footage into high-converting visual masterpieces. 
-            Strictly for creators and brands who demand the best.
-          </p>
-
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ y: textY, opacity }}
+            className="space-y-6"
           >
-            <Link href="/login" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:min-w-[180px]">
-                Get Started
-              </Button>
-            </Link>
-            <Link href="#work" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:min-w-[180px] group">
-                <Play className="w-4 h-4 mr-2 fill-primary group-hover:fill-primary/80" />
-                View Work
-              </Button>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-[0.3em] mb-4 font-mono"
+            >
+              <Zap className="w-3 h-3 fill-indigo-400" />
+              SYSTEM_INITIALIZED // VERSION_1.5_PRO
+            </motion.div>
+
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-heading tracking-tighter leading-[0.85] uppercase italic italic italic">
+              Electron <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-white to-indigo-500 drop-shadow-2xl">
+                Intelligence
+              </span>
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto leading-relaxed font-medium font-sans uppercase tracking-tight">
+              The world's most advanced AI engine for electoral simulation. 
+              Predicting democratic mandates with mathematical precision.
+            </p>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-10"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Link href="/simulate" className="w-full sm:w-auto group">
+                <Button size="lg" className="w-full sm:min-w-[220px] bg-indigo-600 hover:bg-indigo-500 text-white rounded-full font-bold uppercase tracking-widest h-14 relative overflow-hidden transition-all duration-300">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Start Simulation <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                </Button>
+              </Link>
+              <Link href="/technical" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:min-w-[220px] rounded-full border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold uppercase tracking-widest h-14">
+                  View Architecture
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        style={{ opacity: useTransform(scrollY, [0, 100], [1, 0]) }}
-      >
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
+      {/* Bottom Interface Elements */}
+      <div className="absolute bottom-10 left-10 hidden lg:block z-20">
+        <div className="flex flex-col gap-2 font-mono text-[10px] text-zinc-600">
+          <p>[ STATUS: OPERATIONAL ]</p>
+          <p>[ LATENCY: 24MS ]</p>
+          <p>[ CORE: GEMINI_1.5_PRO ]</p>
         </div>
-      </motion.div>
+      </div>
+
+      <div className="absolute bottom-10 right-10 hidden lg:block z-20">
+        <div className="flex items-center gap-4">
+          <div className="w-32 h-px bg-zinc-800" />
+          <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Scroll to explore</p>
+        </div>
+      </div>
     </section>
   );
 }

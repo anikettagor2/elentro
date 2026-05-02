@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://electron-254006836219.us-central1.run.app';
+  const baseUrl = 'https://electron-bd5i2646dq-uc.a.run.app';
   
   return [
     {
