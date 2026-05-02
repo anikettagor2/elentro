@@ -3,21 +3,21 @@ steps:
   args: [
     'build',
     '--build-arg', 'NEXT_PUBLIC_GEMINI_API_KEY=${_NEXT_PUBLIC_GEMINI_API_KEY}',
-    '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/electron',
+    '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/elentro',
     '.'
   ]
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/electron']
+  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/elentro']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args:
   - 'run'
   - 'deploy'
-  - 'electron'
+  - 'elentro'
   - '--image'
-  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/electron'
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/elentro'
   - '--region'
   - 'us-central1'
   - '--platform'
@@ -27,7 +27,7 @@ steps:
   - 'GEMINI_API_KEY=${_GEMINI_API_KEY}'
 
 images:
-- 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/electron'
+- 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/elentro'
 
 substitutions:
   _NEXT_PUBLIC_GEMINI_API_KEY: 'AIzaSyC8U-PbvF8rkpX25eO6ojs6MZbOJ89AnUY'
