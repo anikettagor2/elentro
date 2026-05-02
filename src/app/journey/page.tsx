@@ -15,6 +15,7 @@ const GlobeScene = dynamic(() => import("@/components/3d/scene").then(mod => mod
 const PollingMap = dynamic(() => import("@/components/journey/polling-map").then(mod => mod.PollingMap), { ssr: false });
 const VoteCounting = dynamic(() => import("@/components/journey/vote-counting").then(mod => mod.VoteCounting), { ssr: false });
 const ManifestoGenerator = dynamic(() => import("@/components/journey/manifesto-generator").then(mod => mod.ManifestoGenerator), { ssr: false });
+const AIResultAnalysis = dynamic(() => import("@/components/journey/ai-analysis").then(mod => mod.AIResultAnalysis), { ssr: false });
 const JourneyLoading = dynamic(() => import("@/components/journey/loading-overlay").then(mod => mod.JourneyLoading), { ssr: false });
 
 export default function JourneyPage() {
@@ -84,22 +85,30 @@ export default function JourneyPage() {
         return <VoteCounting />;
       case 'result':
         return (
-          <div className="text-center space-y-8 py-20">
-             <motion.div
-               initial={{ scale: 0.8, opacity: 0 }}
-               animate={{ scale: 1, opacity: 1 }}
-               className="space-y-4"
-             >
-               <h2 className="text-6xl font-black uppercase tracking-tighter text-emerald-500 italic">VICTORY</h2>
-               <p className="text-zinc-400 font-mono">Election Cycle Completed Successfully</p>
-             </motion.div>
-             <Button 
-               onClick={resetJourney}
-               variant="outline"
-               className="border-white/10 hover:bg-white/5 rounded-full px-8"
-             >
-               <RefreshCcw className="w-4 h-4 mr-2" /> Restart Simulation
-             </Button>
+          <div className="space-y-12">
+            <div className="text-center space-y-8 py-10">
+               <motion.div
+                 initial={{ scale: 0.8, opacity: 0 }}
+                 animate={{ scale: 1, opacity: 1 }}
+                 className="space-y-4"
+               >
+                 <h2 className="text-6xl font-black uppercase tracking-tighter text-emerald-500 italic">VICTORY</h2>
+                 <p className="text-zinc-400 font-mono">Election Cycle Completed Successfully</p>
+               </motion.div>
+               <Button 
+                 onClick={resetJourney}
+                 variant="outline"
+                 className="border-white/10 hover:bg-white/5 rounded-full px-8"
+               >
+                 <RefreshCcw className="w-4 h-4 mr-2" /> Restart Simulation
+               </Button>
+            </div>
+
+            <AIResultAnalysis 
+              winner="CANDIDATE ALPHA"
+              margin={14502}
+              totalVotes={1250000}
+            />
           </div>
         );
       default:
