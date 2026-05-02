@@ -66,6 +66,7 @@ export async function generateAIResponseStream(
   }
 }
 
+/**
  * Simpler generation function for non-chat interactions (e.g. simulation results).
  * Includes automatic retry mechanism for 503/high-demand scenarios.
  * 

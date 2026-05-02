@@ -6,14 +6,16 @@ import { Footer } from "@/components/footer";
 import { useJourneyStore } from "@/stores/useJourneyStore";
 import { JourneyProgress } from "@/components/journey/progress";
 import { VoterRegistration } from "@/components/journey/voter-registration";
-import { PollingMap } from "@/components/journey/polling-map";
-import { GlobeScene } from "@/components/3d/scene";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowLeft, RefreshCcw } from "lucide-react";
-
-import { ManifestoGenerator } from "@/components/journey/manifesto-generator";
-import { JourneyLoading } from "@/components/journey/loading-overlay";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+
+const GlobeScene = dynamic(() => import("@/components/3d/scene").then(mod => mod.GlobeScene), { ssr: false });
+const PollingMap = dynamic(() => import("@/components/journey/polling-map").then(mod => mod.PollingMap), { ssr: false });
+const VoteCounting = dynamic(() => import("@/components/journey/vote-counting").then(mod => mod.VoteCounting), { ssr: false });
+const ManifestoGenerator = dynamic(() => import("@/components/journey/manifesto-generator").then(mod => mod.ManifestoGenerator), { ssr: false });
+const JourneyLoading = dynamic(() => import("@/components/journey/loading-overlay").then(mod => mod.JourneyLoading), { ssr: false });
 
 export default function JourneyPage() {
   const { currentStage, setStage, resetJourney } = useJourneyStore();
