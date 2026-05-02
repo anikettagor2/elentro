@@ -85,8 +85,45 @@ Simulated counting engine with live data visualization.
 
 ---
 
+### 🛡️ Production Security & Performance
+Elentro is engineered for high-stakes environments:
+- **Zero-Trust Middleware**: Implements strict `Content-Security-Policy`, `HSTS`, and `X-Frame-Options` to prevent XSS and clickjacking.
+- **SSR Optimization**: Critical browser-dependent modules (Leaflet, Three.js) are dynamically loaded to ensure 100% SEO compatibility without hydration mismatch.
+- **Edge-Ready**: Optimized for deployment on Google Cloud Run with minimal cold-start latency.
+
+---
+
+### 🛠️ Development & Testing
+To ensure 100% production reliability, Elentro includes a robust test suite:
+
+```bash
+# Install Dependencies
+npm install
+
+# Run Unit & Logic Tests
+npm run test
+
+# Build for Production
+npm run build
+```
+
+The test suite covers:
+- **Manifesto AI Logic**: Verifying Gemini API interaction and content formatting.
+- **Journey State Machine**: Ensuring valid transitions between the 10 stages.
+- **Security Middleware**: Validating header injection across edge routes.
+
+---
+
+### 🚀 Deployment Instructions (GCP)
+1. **Containerize**: `gcloud builds submit --config cloudbuild.yaml`
+2. **Deploy**: The project is configured for automated deployment to **Cloud Run**.
+3. **IAM**: Ensure `allUsers` have `roles/run.invoker` for public access.
+
+---
+
 ### ⚖️ License
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-**ELENTRO** // Redefining Digital Democracy.
+
+**ELENTRO** // Redefining Digital Democracy through High-Fidelity Simulation.

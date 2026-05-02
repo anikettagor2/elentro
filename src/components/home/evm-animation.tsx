@@ -64,7 +64,7 @@ export function EVMAnimation() {
                 <div className={`w-3 h-3 rounded-full ${hasVoted ? 'bg-red-500 shadow-[0_0_10px_red]' : 'bg-zinc-700'}`} />
                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-tighter font-bold">Ready to Vote</span>
               </div>
-              <div className="text-[10px] font-mono text-primary font-black tracking-[0.2em]">ELECTRON // BU-2024</div>
+              <div className="text-[10px] font-mono text-primary font-black tracking-[0.2em]">ELENTRO // BU-2024</div>
             </div>
 
             <div className="space-y-4">
@@ -141,7 +141,7 @@ export function EVMAnimation() {
                       <div className="w-full h-8 bg-zinc-100 flex items-center justify-center">
                          <div className="w-full h-1 bg-black/10 mx-2" />
                       </div>
-                      <div className="text-[6px] font-mono uppercase text-zinc-400">Electron Simulation Protocol v1.5</div>
+                      <div className="text-[6px] font-mono uppercase text-zinc-400">Elentro Simulation Protocol v1.5</div>
                     </div>
                   </motion.div>
                 )}

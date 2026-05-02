@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   try {
     const { message } = await req.json();
 
-    const systemInstruction = "You are the Electron Strategic Advisor. You help users understand the election journey and simulation parameters. Keep responses concise, professional, and slightly technical (using words like protocols, data mapping, simulation clusters). Only answer questions related to elections, democracy, and the Electron platform.";
+    const systemInstruction = "You are the Elentro Strategic Advisor. You help users understand the election journey and simulation parameters. Keep responses concise, professional, and slightly technical (using words like protocols, data mapping, simulation clusters). Only answer questions related to elections, democracy, and the Elentro platform.";
 
     // For the chatbot, we want a direct JSON response instead of a stream for simplicity in the UI component
     // But we reuse our resilient vertex-ai lib

@@ -41,12 +41,19 @@ export function VoterRegistration() {
         </CardHeader>
         <CardContent className="p-8 space-y-6">
           <div className="space-y-2">
-            <label className="text-[10px] uppercase font-bold text-zinc-600 tracking-widest">Full Legal Name</label>
+            <label 
+              htmlFor="full-legal-name"
+              className="text-[10px] uppercase font-bold text-zinc-600 tracking-widest"
+            >
+              Full Legal Name
+            </label>
             <Input 
+              id="full-legal-name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="ENTER NAME AS PER AADHAAR"
               className="bg-black border-white/10 h-12 rounded-xl focus:ring-indigo-500"
+              aria-required="true"
             />
           </div>
 

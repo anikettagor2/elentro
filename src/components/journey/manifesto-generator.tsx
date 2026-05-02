@@ -8,6 +8,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, FileText, Download, Loader2 } from "lucide-react";
 
+/**
+ * ManifestoGenerator Component
+ * 
+ * An AI-powered tool that utilizes Gemini 1.5 Pro via Vertex AI to generate 
+ * strategic election manifestos based on user-defined core values.
+ * Features real-time state management and accessibility compliance.
+ */
 export function ManifestoGenerator() {
   const { completeStage, setStage } = useJourneyStore();
   const [prompt, setPrompt] = useState("");
@@ -35,7 +42,7 @@ export function ManifestoGenerator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8" role="region" aria-label="AI Manifesto Generator">
       <div className="text-center space-y-4">
         <h2 className="text-4xl font-black uppercase tracking-tighter">Manifesto AI</h2>
         <p className="text-zinc-500 font-mono text-xs">AI-Driven Political Strategy // Extra Feature</p>
@@ -44,26 +51,32 @@ export function ManifestoGenerator() {
       <div className="grid md:grid-cols-2 gap-8">
         <Card className="bg-zinc-950 border-white/5 p-6 space-y-6">
           <div className="space-y-4">
-            <label className="text-xs font-bold uppercase tracking-widest text-indigo-400 flex items-center gap-2">
+            <label 
+              htmlFor="manifesto-prompt"
+              className="text-xs font-bold uppercase tracking-widest text-indigo-400 flex items-center gap-2"
+            >
               <Sparkles className="w-3 h-3" /> Core Values & Vision
             </label>
             <Textarea 
+              id="manifesto-prompt"
               placeholder="e.g., Sustainability, Universal Healthcare, Digital Infrastructure..."
               className="bg-black border-white/10 min-h-[150px] resize-none focus:border-indigo-500/50"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
+              aria-required="true"
             />
           </div>
           <Button 
             onClick={generateManifesto}
             disabled={loading || !prompt}
             className="w-full bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl h-14 font-black uppercase tracking-widest"
+            aria-busy={loading}
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : "Generate with Gemini"}
           </Button>
         </Card>
 
-        <Card className="bg-zinc-900/50 border-white/5 p-6 relative overflow-hidden min-h-[400px]">
+        <Card className="bg-zinc-900/50 border-white/5 p-6 relative overflow-hidden min-h-[400px]" aria-live="polite">
           <AnimatePresence mode="wait">
             {manifesto ? (
               <motion.div 

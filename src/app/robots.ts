@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://electron-254006836219.us-central1.run.app/sitemap.xml',
+    sitemap: 'https://elentro-bd5i2646dq-uc.a.run.app/sitemap.xml',
   };
 }

@@ -16,7 +16,7 @@ interface Message {
 export function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: "SYSTEM_INITIALIZED. I am your Electron strategic advisor. How can I assist with your campaign simulation today?" }
+    { role: 'assistant', content: "SYSTEM_INITIALIZED. I am your Elentro strategic advisor. How can I assist with your campaign simulation today?" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
