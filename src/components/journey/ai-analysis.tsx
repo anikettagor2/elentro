@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Brain, Sparkles, Loader2, FileText, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AIService } from "@/services/ai-service";
+import { toast } from "sonner";
 
 interface AIResultAnalysisProps {
   winner: string;
@@ -12,28 +14,29 @@ interface AIResultAnalysisProps {
   totalVotes: number;
 }
 
+/**
+ * AIResultAnalysis Component
+ * 
+ * Provides an AI-driven post-election strategic report using the AIService.
+ * Demonstrates high-fidelity AI integration for political mandate interpretation.
+ */
 export function AIResultAnalysis({ winner, margin, totalVotes }: AIResultAnalysisProps) {
   const [analysis, setAnalysis] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAnalysis = async () => {
-      try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            message: `Perform a post-election strategic analysis. Winner: ${winner}, Margin: ${margin} votes, Total Votes Cast: ${totalVotes}. Provide a "Political Mandate Report" with sections: Mandate Interpretation, Strategic Opportunities, and Public Sentiment Analysis. Tone: Professional and Analytical.`
-          })
-        });
-        const data = await response.json();
-        setAnalysis(data.text);
-      } catch (error) {
-        console.error("AI Analysis failed", error);
+      setLoading(true);
+      const resultData = { winner, margin, totalVotes };
+      const response = await AIService.analyzeResults(resultData);
+      
+      if (response.error) {
+        toast.error(response.error);
         setAnalysis("The mandate reflects a complex demographic shift. Strategically, the winner must now focus on consolidating diverse coalitions while addressing infrastructure gaps identified during the campaign.");
-      } finally {
-        setLoading(false);
+      } else {
+        setAnalysis(response.text);
       }
+      setLoading(false);
     };
 
     fetchAnalysis();

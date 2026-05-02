@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { ManifestoGenerator } from '../components/journey/manifesto-generator';
 import { useJourneyStore } from '../stores/useJourneyStore';
+import { AIService } from '../services/ai-service';
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
 // Mock the store
@@ -8,8 +9,12 @@ vi.mock('../stores/useJourneyStore', () => ({
   useJourneyStore: vi.fn(),
 }));
 
-// Mock fetch
-global.fetch = vi.fn();
+// Mock AIService
+vi.mock('../services/ai-service', () => ({
+  AIService: {
+    generateManifesto: vi.fn(),
+  }
+}));
 
 describe('ManifestoGenerator Component', () => {
   const mockSetStage = vi.fn();
@@ -25,23 +30,23 @@ describe('ManifestoGenerator Component', () => {
 
   it('renders the input field and generate button', () => {
     render(<ManifestoGenerator />);
-    expect(screen.getByPlaceholderText(/Sustainability/i)).toBeDefined();
-    expect(screen.getByText(/Generate with Gemini/i)).toBeDefined();
+    expect(screen.getByPlaceholderText(/Sustainability/i)).toBeInTheDocument();
+    expect(screen.getByText(/Generate with Gemini/i)).toBeInTheDocument();
   });
 
   it('enables the button only when prompt is provided', () => {
     render(<ManifestoGenerator />);
     const button = screen.getByRole('button', { name: /Generate with Gemini/i });
-    expect(button.hasAttribute('disabled')).toBe(true);
+    expect(button).toBeDisabled();
 
     const input = screen.getByPlaceholderText(/Sustainability/i);
     fireEvent.change(input, { target: { value: 'Test Vision' } });
-    expect(button.hasAttribute('disabled')).toBe(false);
+    expect(button).not.toBeDisabled();
   });
 
-  it('calls the API and displays the result on click', async () => {
-    (global.fetch as any).mockResolvedValueOnce({
-      json: async () => ({ text: 'Generated Manifesto Content' }),
+  it('calls AIService and displays the result on click', async () => {
+    (AIService.generateManifesto as any).mockResolvedValueOnce({
+      text: 'Generated Manifesto Content',
     });
 
     render(<ManifestoGenerator />);
@@ -52,7 +57,7 @@ describe('ManifestoGenerator Component', () => {
     fireEvent.click(button);
 
     await waitFor(() => {
-      expect(screen.getByText(/Generated Manifesto Content/i)).toBeDefined();
+      expect(screen.getByText(/Generated Manifesto Content/i)).toBeInTheDocument();
     });
   });
 });

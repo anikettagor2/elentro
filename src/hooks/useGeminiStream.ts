@@ -71,18 +71,18 @@ export const useGeminiStream = () => {
           try {
             const parsed = JSON.parse(latestBlock);
             setPartialData(parsed);
-          } catch (e) {
+          } catch {
             // If full parse fails, try to close common structures
             try {
               const fixed = latestBlock + '"}';
               const parsedFixed = JSON.parse(fixed);
               setPartialData(parsedFixed);
-            } catch (e2) {
+            } catch {
               try {
                 const fixed2 = latestBlock + ']}';
                 const parsedFixed2 = JSON.parse(fixed2);
                 setPartialData(parsedFixed2);
-              } catch (e3) {}
+              } catch {}
             }
           }
         }

@@ -20,7 +20,7 @@ export function PollingBoothFinder() {
   const [fetchingPlaces, setFetchingPlaces] = useState(false);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
 
-  const API_KEY = "AIzaSyAmvz5aTQ25Tf4_wYP1jdT55MSrPbaFkx8";
+  const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
   const handleLocate = () => {
     setLoading(true);

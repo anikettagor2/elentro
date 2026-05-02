@@ -4,9 +4,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useJourneyStore } from "@/stores/useJourneyStore";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, FileText, Download, Loader2 } from "lucide-react";
+import { AIService } from "@/services/ai-service";
+import { toast } from "sonner";
 
 /**
  * ManifestoGenerator Component
@@ -21,24 +23,25 @@ export function ManifestoGenerator() {
   const [manifesto, setManifesto] = useState("");
   const [loading, setLoading] = useState(false);
 
+  /**
+   * Triggers the AI manifesto generation process.
+   * Delegates the logic to AIService for modularity.
+   */
   const generateManifesto = async () => {
-    if (!prompt) return;
-    setLoading(true);
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: `Generate a professional election manifesto based on these core values: ${prompt}. Format it with sections: Vision, Education, Economy, and Environment. Use a formal, inspiring tone.`
-        })
-      });
-      const data = await response.json();
-      setManifesto(data.text);
-    } catch (error) {
-      console.error("Failed to generate manifesto", error);
-    } finally {
-      setLoading(false);
+    if (!prompt.trim()) {
+      toast.error("Please enter core values first.");
+      return;
     }
+
+    setLoading(true);
+    const response = await AIService.generateManifesto(prompt);
+    
+    if (response.error) {
+      toast.error(response.error);
+    } else {
+      setManifesto(response.text);
+    }
+    setLoading(false);
   };
 
   return (

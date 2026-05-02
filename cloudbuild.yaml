@@ -30,5 +30,5 @@ images:
 - 'us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-lib/elentro'
 
 substitutions:
-  _NEXT_PUBLIC_GEMINI_API_KEY: 'AIzaSyC8U-PbvF8rkpX25eO6ojs6MZbOJ89AnUY'
-  _GEMINI_API_KEY: 'AIzaSyC8U-PbvF8rkpX25eO6ojs6MZbOJ89AnUY'
+  _NEXT_PUBLIC_GEMINI_API_KEY: ''
+  _GEMINI_API_KEY: ''
